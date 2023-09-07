@@ -10,7 +10,7 @@ function generatePassword ()
     var passwordLength = parseInt(prompt("Password Length:"))
       console.log(passwordLength);
       if (passwordLength || passwordLength < 8 || passwordLength > 128) {
-      alert("Sorry! This is an invalid length. Please, try again")
+      alert("Invalid. Password Length Must Be Between 8-128 Characters.")
       return generatePassword ()
       }
 
@@ -35,14 +35,31 @@ function generatePassword ()
   var useCapital = confirm("Do you want to include capital letters? Yes or No:");
   var useLowercase = confirm("Do you want to include lowercase letters? Yes or No:");
   var usespecialCharacters= confirm("Do you want to include special characters? Yes or No:");
-  var usenumeric= confirm("Do you want to include numeric numbers? Yes or no:");
+  var useNumeric= confirm("Do you want to include numeric numbers? Yes or no:");
 
   //Prompt Validation
   
+  if (!useCapital || !useLowercase|| !usespecialCharacters || !useNumeric) {
+    alert("Invalid! You must pick one type of character that is true");
+    
+  }
 
+var possibleCharacters = []
+if (useCapital) {
+  possibleCharacters= possibleCharacters.concat(capitalLetters)
+}
 
+if (useLowercase) {
+  possibleCharacters= possibleCharacters.concat(lowercaseLetters)
+}
 
+if (usespecialCharacters) {
+  possibleCharacters= possibleCharacters.concat(specialCharacters)
+}
 
+if (useNumeric) {
+  possibleCharacters= possibleCharacters.concat(numeric)
+}
 
 
 
