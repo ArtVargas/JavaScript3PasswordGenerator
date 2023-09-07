@@ -17,6 +17,36 @@ function generatePassword ()
   
 }
 
+// Variables needed for user in password generation
+
+// Does user want to include any of the following:
+// Capital letters
+// Lowercase letters
+// Special characters such as "!@#$%"
+// Numeric
+
+  var capitalLetters = ['A', 'B', 'C', 'D', 'E','F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  var lowercaseLetters =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  var specialCharacters= ['!', '@', '#','$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', ',', '<', '>', ',', '.', '?', '/' ];
+  var numeric = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+  // Confirmation for Variables
+
+  var useCapital = confirm("Do you want to include capital letters? Yes or No:");
+  var useLowercase = confirm("Do you want to include lowercase letters? Yes or No:");
+  var usespecialCharacters= confirm("Do you want to include special characters? Yes or No:");
+  var usenumeric= confirm("Do you want to include numeric numbers? Yes or no:");
+
+  //Prompt Validation
+  
+
+
+
+
+
+
+
+
 
 var generateBtn = document.querySelector("#generate");
 
