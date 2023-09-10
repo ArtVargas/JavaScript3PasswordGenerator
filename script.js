@@ -1,4 +1,5 @@
 // Assignment Code
+var generateBtn = document.querySelector("#generate");
 function generatePassword ()
 {
 
@@ -8,14 +9,14 @@ function generatePassword ()
   // If critera isn't keep prompting user until they enter a valid password
 
     var passwordLength = parseInt(prompt("Password Length:"))
-      console.log(passwordLength);
-      if (passwordLength || passwordLength < 8 || passwordLength > 128) {
+
+      if (!passwordLength || passwordLength < 8 || passwordLength > 128) {
       alert("Invalid. Password Length Must Be Between 8-128 Characters.")
       return generatePassword ()
       }
 
   
-}
+
 
 // Variables needed for user in password generation
 
@@ -40,32 +41,41 @@ function generatePassword ()
   //Prompt Validation
   
   if (!useCapital || !useLowercase|| !usespecialCharacters || !useNumeric) {
-    alert("Invalid! You must pick one type of character that is true");
+    alert("Invalid! You must pick one type of character that is true")
     
-  }
+  };
 
 var possibleCharacters = []
 if (useCapital) {
-  possibleCharacters= possibleCharacters.concat(capitalLetters)
+  possibleCharacters= possibleCharacters.concat(capitalLetters);
 }
 
 if (useLowercase) {
-  possibleCharacters= possibleCharacters.concat(lowercaseLetters)
+  possibleCharacters= possibleCharacters.concat(lowercaseLetters);
 }
 
 if (usespecialCharacters) {
-  possibleCharacters= possibleCharacters.concat(specialCharacters)
+  possibleCharacters= possibleCharacters.concat(specialCharacters);
 }
 
 if (useNumeric) {
-  possibleCharacters= possibleCharacters.concat(numeric)
+  possibleCharacters= possibleCharacters.concat(numeric);
+}
+
+//Final Password Confirmation
+var finalPassword= ""; 
+for (var i =0; i <passwordLength; i++){
+  var randomize = Math.floor(Math.random() * possibleCharacters.length);
+  finalPassword = finalPassword + possibleCharacters[randomize];
+}
+return finalPassword; 
 }
 
 
 
 
 
-var generateBtn = document.querySelector("#generate");
+
 
 
 // Write password to the #password input
